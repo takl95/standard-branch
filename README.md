@@ -1,4 +1,4 @@
-# standard-commit-2
+# standard-branch
 
 A zero-config opiniated, like command line utility to create [conventional](https://conventionalcommits.org/) branches.
 See also [standard-commit-2](https://www.npmjs.com/package/standard-commit-2)
