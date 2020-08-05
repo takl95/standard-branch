@@ -11,8 +11,8 @@
     "url": "git+https://github.com/takl95/standard-branch.git"
   },
   "bin": {
-    "cb": "index.js",
-    "standard-branch": "index.js"
+    "cb": "node index.js",
+    "standard-branch": "node index.js"
   },
   "author": "Laszlo Takacs",
   "license": "ISC",
