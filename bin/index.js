@@ -95,8 +95,11 @@ execute("git rev-parse --abbrev-ref HEAD", branchNameOutput => {
             },
           ])
           .then(answers => {
-            const branchName = `${answers.type}/${answers.name}/${answers.ticket}`
-            const command = `git checkout -b ${branchName}`
+            let branchName = `${answers.type}/${answers.name}/${answers.ticket}`
+            if (config.issueFirst) {
+              branchName = `${answers.ticket}/${answers.type}/${answers.name}`
+            }
+            const command = `git checkout -b ${branchName}`;
 
             inquirer
               .prompt([
