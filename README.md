@@ -26,9 +26,9 @@ npm update -g standard-branch
 ```
 
 ## Configuration
-** You can only configure with `standard-commit-2`.**
+You can only configure with `standard-commit-2`.
  
- See https://www.npmjs.com/package/standard-commit-2#configuration
+ See: https://www.npmjs.com/package/standard-commit-2#configuration
  
 you  configure standard-commit via a `.standard-commitrc` file. You should add this file to the git repo.
 ## Default Types
