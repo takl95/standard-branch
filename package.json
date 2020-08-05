@@ -2,7 +2,7 @@
   "name": "standard-branch",
   "version": "1.1.1",
   "description": "a cli utility for creating branches",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,9 +11,10 @@
     "url": "git+https://github.com/takl95/standard-branch.git"
   },
   "bin": {
-    "cb": "node index.js",
-    "standard-branch": "node index.js"
+    "cb": "bin/index.js",
+    "standard-branch": "bin/index.js"
   },
+  "preferGlobal": true,
   "author": "Laszlo Takacs",
   "license": "ISC",
   "bugs": {
