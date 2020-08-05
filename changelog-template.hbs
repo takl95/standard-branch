@@ -1,0 +1,72 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+{{#each releases}}
+  {{#if href}}
+    ## [{{title}}]({{href}}){{#if tag}} - {{isoDate}}{{/if}}
+  {{else}}
+    ## {{title}}{{#if tag}} - {{isoDate}}{{/if}}
+  {{/if}}
+
+  {{#if summary}}
+    {{summary}}
+  {{/if}}
+
+  {{#if merges}}
+    ### ⛙ Merged
+
+    {{#each merges}}
+      - {{#if commit.breaking}}**Breaking change:** {{/if}}{{message}} {{#if href}}[`!{{id}}`]({{href}}) 👈 {{commit.author}}{{/if}}
+    {{/each}}
+  {{/if}}
+
+  {{#commit-list commits heading='### 🐞 Bugfixes' message='fix: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 🔥 Features' message='feat: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### ♻ Refactors' message='refactor: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### ⚙ Build Process' message='build: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 🤖 CI Process' message='ci: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### ↩ Reverts' message='revert: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 🏡 Chore' message='chore: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 👌 Code Style' message='style: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 📝 Documenation' message='docs: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 👓 Tests' message='test: '}}
+    - {{subject}} [`{{shorthash}}`]({{href}}) 👈 {{author}}  {{#each fixes}} {{#if href}}[`{{id}}`]({{href}}) 👈 {{author}}{{/if}}{{/each}}
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### 🤷 Other' exclude='fix:|test:|feat:|docs:|chore:|refactor:|style:|ci:|build:' }}
+    - {{#if breaking}}**Breaking change:** {{/if}}{{subject}} {{#if href}}[`{{shorthash}}`]({{href}}) 👈 {{author}}{{/if}}
+  {{/commit-list}}
+
+
+{{/each}}

@@ -1,0 +1,24 @@
+{
+    "replaceText": {
+      "(NCM-\\d+)": "[`$1`](https://ats.anexia-it.com/browse/$1)",
+      "(ncm-\\d+)": "[`$1`](https://ats.anexia-it.com/browse/$1)",
+      "(ams-\\d+)": "[`$1`](https://ats.anexia-it.com/browse/$1)",
+      "(AMS-\\d+)": "[`$1`](https://ats.anexia-it.com/browse/$1)",
+      "(AM-\\d+)": "[`$1`](https://ats.anexia-it.com/browse/$1)",
+      "(am-\\d+)": "[`$1`](https://ats.anexia-it.com/browse/$1)",
+      "feat:": "",
+      "feat: ": "",
+      "fix:": "",
+      "fix: ": "",
+      "test:": "",
+      "test: ": "",
+      "chore:": "",
+      "chore: ": "",
+      "docs:": "",
+      "docs: ": "",
+      "style:": "",
+      "style: ": "",
+      "refactor:": "",
+      "refactor: ": ""
+    }
+  }
