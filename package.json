@@ -1,0 +1,19 @@
+{
+  "name": "standard-branch",
+  "version": "1.0.0",
+  "description": "a cli utility for creating branches",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takl95/standard-branch.git"
+  },
+  "author": "Laszlo Takacs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takl95/standard-branch/issues"
+  },
+  "homepage": "https://github.com/takl95/standard-branch#readme"
+}
