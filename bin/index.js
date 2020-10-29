@@ -94,27 +94,32 @@ execute("git rev-parse --abbrev-ref HEAD", branchNameOutput => {
               }
             },
           ])
-          .then(answers => {
-            let branchName = `${answers.type}/${answers.name}/${answers.ticket}`
-            if (config.issueFirst) {
-              branchName = `${answers.ticket}/${answers.type}/${answers.name}`
-            }
-            const command = `git checkout -b ${branchName}`;
-
-            inquirer
-              .prompt([
-                {
-                  name: 'confirm',
-                  message: chalk.yellow(command) + '\nIs this correct?',
-                  default: "Yes"
-                },
-              ])
-              .then(response => {
-                if (response.confirm.toLowerCase() === "yes" || response.confirm.toLowerCase() === "y") {
-                  sh.exec(command)
+          .then(({name, ticket, type}) => {
+              let branchName = `${type}/${name}`
+              if (ticket) {
+                branchName = `${type}/${name}/${ticket}`;
+                if (config.issueFirst) {
+                  branchName = `${ticket}/${type}/${name}`
                 }
-              })
-          })
+              }
+
+              const command = `git checkout -b ${branchName}`;
+
+              inquirer
+                .prompt([
+                  {
+                    name: 'confirm',
+                    message: chalk.yellow(command) + '\nIs this correct?',
+                    default: "Yes"
+                  },
+                ])
+                .then(response => {
+                  if (response.confirm.toLowerCase() === "yes" || response.confirm.toLowerCase() === "y") {
+                    sh.exec(command)
+                  }
+                })
+            }
+          )
       }
     })
 })
