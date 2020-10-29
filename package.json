@@ -1,6 +1,6 @@
 {
   "name": "standard-branch",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "a cli utility for creating branches",
   "main": "bin/index.js",
   "scripts": {
