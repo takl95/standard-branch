@@ -12,6 +12,7 @@
   },
   "bin": {
     "cb": "bin/index.js",
+    "gcb": "bin/index.js",
     "standard-branch": "bin/index.js"
   },
   "preferGlobal": true,
